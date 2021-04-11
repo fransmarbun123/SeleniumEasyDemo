@@ -34,6 +34,12 @@ Scenario: Dropdown
 	And User select multiple select list demo form
 	Then Drodown is selected
 	
+@FormSubmit
+Scenario: Input Form Submit
+	Given User is on input form submit site
+	When User input all form fields
+	Then input form is filled
+	
 	
 	
 	

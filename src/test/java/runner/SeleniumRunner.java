@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 			features = "src\\test\\resources",
 			glue = {"stepDefinitions"},
-			tags = {"@Homepage,@Dropdown"}
+			tags = {"@Homepage,@FormSubmit"}
 		)
 public class SeleniumRunner {
 

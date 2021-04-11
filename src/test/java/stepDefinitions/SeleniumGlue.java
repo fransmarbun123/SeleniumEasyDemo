@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.selenium.homepage.Homepage;
 import com.selenium.inputForms.Checkbox;
 import com.selenium.inputForms.Dropdown;
+import com.selenium.inputForms.InputForm;
 import com.selenium.inputForms.RadioButton;
 import com.selenium.inputForms.SimpleForm;
 
@@ -144,6 +145,24 @@ public class SeleniumGlue {
 
 	@Then("Drodown is selected")
 	public void drodown_is_selected() {
+		System.out.print("");
+	}
+	
+	@Given("User is on input form submit site")
+	public void user_is_on_input_form_submit_site() {
+	    InputForm inputForm	= new InputForm(driver);
+	    inputForm.enterInputForm();
+	    inputForm.enterInputFormSubmit();
+	}
+
+	@When("User input all form fields")
+	public void user_input_all_form_fields() throws InterruptedException {
+		InputForm inputForm	= new InputForm(driver);
+		inputForm.inputForm();
+	}
+
+	@Then("input form is filled")
+	public void input_form_is_filled() {
 		System.out.print("");
 	}
 }

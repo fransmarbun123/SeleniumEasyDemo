@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.selenium.homepage.Homepage;
 import com.selenium.inputForms.Checkbox;
+import com.selenium.inputForms.Dropdown;
 import com.selenium.inputForms.RadioButton;
 import com.selenium.inputForms.SimpleForm;
 
@@ -113,6 +114,36 @@ public class SeleniumGlue {
 
 	@Then("Radio button is checked")
 	public void radio_button_is_checked() {
+		System.out.print("");
+	}
+	
+	@Given("User is on dropdown site")
+	public void user_is_on_dropdown_site() {
+		Dropdown dd = new Dropdown(driver);
+		dd.enterInputForm();
+		dd.enterDropDownSite();
+	}
+
+	@When("User select list demo form")
+	public void user_select_list_demo_form() {
+		Dropdown dd = new Dropdown(driver);
+		dd.selectSingleOption();
+		dd.verifySingleOptionValue();
+	}
+
+	@When("User select multiple select list demo form")
+	public void user_select_multiple_select_list_demo_form() throws InterruptedException {
+		Dropdown dd = new Dropdown(driver);
+		dd.selectMultipleOption();
+		dd.firstSelected();
+		dd.verifyFirstSelected();
+		
+		dd.getAllSelected();
+		dd.verifyAllSelected();
+	}
+
+	@Then("Drodown is selected")
+	public void drodown_is_selected() {
 		System.out.print("");
 	}
 }

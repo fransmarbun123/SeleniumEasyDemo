@@ -27,6 +27,13 @@ Scenario: RadioButton
 	And User click group radio buttons demo form
 	Then Radio button is checked
 	
+@Dropdown
+Scenario: Dropdown
+	Given User is on dropdown site
+	When User select list demo form
+	And User select multiple select list demo form
+	Then Drodown is selected
+	
 	
 	
 	

@@ -40,6 +40,11 @@ Scenario: Input Form Submit
 	When User input all form fields
 	Then input form is filled
 	
-	
+@AjaxForm
+Scenario: Ajax Form
+	Given User is on ajax form submit site
+	When User input all ajax form fields
+	And User click submit button
+	Then Form submited successfully
 	
 	

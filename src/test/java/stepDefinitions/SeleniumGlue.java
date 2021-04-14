@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.selenium.homepage.Homepage;
+import com.selenium.inputForms.AjaxForm;
 import com.selenium.inputForms.Checkbox;
 import com.selenium.inputForms.Dropdown;
 import com.selenium.inputForms.InputForm;
@@ -164,5 +165,30 @@ public class SeleniumGlue {
 	@Then("input form is filled")
 	public void input_form_is_filled() {
 		System.out.print("");
+	}
+	
+	@Given("User is on ajax form submit site")
+	public void user_is_on_ajax_form_submit_site() {
+	    AjaxForm af = new AjaxForm(driver);
+	    af.enterInputForm();
+	    af.enterAjaxForm();
+	}
+
+	@When("User input all ajax form fields")
+	public void user_input_all_ajax_form_fields() throws InterruptedException {
+		AjaxForm af = new AjaxForm(driver);
+		af.inputAjaxForm();
+	}
+
+	@When("User click submit button")
+	public void user_click_submit_button() {
+		AjaxForm af = new AjaxForm(driver);
+		af.clickSubmit();
+	}
+
+	@Then("Form submited successfully")
+	public void form_submited_successfully() {
+		AjaxForm af = new AjaxForm(driver);
+		af.verifySubmitSuccess();
 	}
 }
